@@ -35,7 +35,7 @@ public:
     double Abs() { return sqrt(numerator_ * numerator_ + denominator_ * denominator_); }
         bool operator==(Fraction other) { return Abs() == other.Abs(); }
         bool operator!=(Fraction other) { return !(*this == other); }
-        bool operator>(Fraction other) { return Abs() > other.Abs(); }
+        bool operator>(Fraction other) { return numerator_ * other.denominator_ > other.numerator_ * denominator_; }
         bool operator<(Fraction other) { return other > *this; }
         bool operator>=(Fraction other) { return !(*this < other); }
         bool operator<=(Fraction other) { return !(*this > other); }
