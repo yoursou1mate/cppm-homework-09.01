@@ -32,8 +32,8 @@ public:
         Fraction operator-(int other) { return Fraction(numerator_ - other, denominator_); }
         void Print() { std::cout << numerator_ << (denominator_ < 0 ? "" : "+") << denominator_ << "i\n"; }
     
-    double Abs() { return sqrt(numerator_ * numerator_ + denominator_ * denominator_); }
-        bool operator==(Fraction other) { return Abs() == other.Abs(); }
+   
+        bool operator==(Fraction other) { return numerator_ == other.numerator_ && other.denominator_ == denominator_; }
         bool operator!=(Fraction other) { return !(*this == other); }
         bool operator>(Fraction other) { return numerator_ * other.denominator_ > other.numerator_ * denominator_; }
         bool operator<(Fraction other) { return other > *this; }
