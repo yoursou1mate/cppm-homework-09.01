@@ -33,7 +33,7 @@ public:
         void Print() { std::cout << numerator_ << (denominator_ < 0 ? "" : "+") << denominator_ << "i\n"; }
     
    
-        bool operator==(Fraction other) { return numerator_ == other.numerator_ && other.denominator_ == denominator_; }
+    bool operator==(Fraction other) { return numerator_ * other.denominator_ && other.numerator_ * denominator_; }
         bool operator!=(Fraction other) { return !(*this == other); }
         bool operator>(Fraction other) { return numerator_ * other.denominator_ > other.numerator_ * denominator_; }
         bool operator<(Fraction other) { return other > *this; }
